@@ -53,7 +53,7 @@ public:
   void on_tick() override;
 
   BT::NodeStatus
-  on_completion(std::shared_ptr<std_srvs::srv::SetBool::Response> response);
+  on_completion(std::shared_ptr<std_srvs::srv::SetBool::Response> response) override;
 };
 
 class DisarmService
