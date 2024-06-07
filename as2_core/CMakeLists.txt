@@ -83,7 +83,7 @@ set(SOURCE_CPP_FILES
 # Create the library
 add_library(${PROJECT_NAME} STATIC ${SOURCE_CPP_FILES})
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
-target_link_libraries(${PROJECT_NAME} ${GeographicLib_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} GeographicLib::GeographicLib)
 
 # Mocks library
 set(MOCKS_LIBRARY_NAME mocks)
