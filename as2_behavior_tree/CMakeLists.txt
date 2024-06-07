@@ -18,6 +18,8 @@ set(PROJECT_DEPENDENCIES
   ament_cmake_ros
   behaviortree_cpp_v3
   nav2_msgs
+  nav2_util
+  nav2_behavior_tree
   rclcpp
   rclcpp_action
   as2_core
