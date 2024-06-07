@@ -59,6 +59,11 @@ endforeach()
 
 find_package(GeographicLib REQUIRED)
 
+if (APPLE)
+  # macOS Sonoma 14.5 aarch64 transitive dependency issue
+  link_directories("/opt/homebrew/opt/yaml-cpp/lib")
+endif()
+
 # Pybind11
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 find_package(pybind11 REQUIRED)
