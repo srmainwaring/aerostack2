@@ -29,6 +29,16 @@ foreach(DEPENDENCY ${PROJECT_DEPENDENCIES})
   find_package(${DEPENDENCY} REQUIRED)
 endforeach()
 
+if (APPLE)
+  # macOS Sonoma 14.5 aarch64 transitive dependency issue
+  find_package(GeographicLib REQUIRED)
+  link_directories("/opt/homebrew/opt/yaml-cpp/lib")
+endif()
+
+set(SOURCE_CPP_FILES
+  src/gazebo_platform.cpp
+)
+
 # Include necessary directories
 include_directories(
   include

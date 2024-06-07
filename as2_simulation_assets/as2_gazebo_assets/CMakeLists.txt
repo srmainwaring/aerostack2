@@ -52,6 +52,11 @@ find_package(${GZ_RENDERING} REQUIRED)
 find_package(${GZ_MSGS} REQUIRED)
 # find_package(backward_ros REQUIRED)
 
+if (APPLE)
+  # macOS Sonoma 14.5 aarch64 transitive dependency issue
+  find_package(GeographicLib REQUIRED)
+  link_directories("/opt/homebrew/opt/yaml-cpp/lib")
+endif()
 
 # find dependencies
 set(PROJECT_DEPENDENCIES
