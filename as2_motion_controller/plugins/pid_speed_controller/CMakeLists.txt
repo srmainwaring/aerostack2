@@ -48,7 +48,7 @@ include_directories(
   include/${PLUGIN_NAME}
   ${EIGEN3_INCLUDE_DIRS}
 
-  # Incluye pid_controller
+  # include pid_controller
   ${CMAKE_BINARY_DIR}/_deps/pid_controller-src/include
 )
 
@@ -83,6 +83,15 @@ install(
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
 )
+
+# install pid_controller shared library
+install(
+  TARGETS pid_controller
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  RUNTIME DESTINATION bin
+)
+
 
 if(BUILD_TESTING)
   add_subdirectory(tests)
