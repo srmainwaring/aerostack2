@@ -34,3 +34,12 @@
  ********************************************************************************/
 
 #include "as2_core/rate.hpp"
+
+namespace as2 {
+namespace rate {
+
+RateBase::~RateBase() = default;
+
+} //  namespace rate
+} //  namespace as2
+

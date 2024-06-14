@@ -52,7 +52,7 @@ class RateBase
 {
 public:
   RCLCPP_SMART_PTR_DEFINITIONS_NOT_COPYABLE(RateBase) // NOLINT
-
+  virtual ~RateBase();
   virtual bool sleep() = 0;
   virtual bool is_steady() const = 0;
   virtual void reset() = 0;
@@ -77,6 +77,7 @@ public:
   : period_(period), last_interval_(Clock::now())
   {
   }
+  virtual ~GenericRate() {}
 
   virtual bool sleep()
   {
