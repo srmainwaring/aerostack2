@@ -56,14 +56,14 @@ public:
 
   void on_tick() override;
 
-  BT::NodeStatus on_success() {
+  BT::NodeStatus on_success() override {
     using namespace std::chrono_literals;
     std::this_thread::sleep_for(500ms);
     return BT::NodeStatus::SUCCESS;
   }
 
   void on_wait_for_result(
-      std::shared_ptr<const as2_msgs::action::Takeoff::Feedback> feedback);
+      std::shared_ptr<const as2_msgs::action::Takeoff::Feedback> feedback) override;
 
   static BT::PortsList providedPorts() {
     return providedBasicPorts(

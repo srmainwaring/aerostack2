@@ -73,7 +73,7 @@ public:
   }
 
   void on_wait_for_result(
-      std::shared_ptr<const as2_msgs::action::FollowPath::Feedback> feedback) {}
+      std::shared_ptr<const as2_msgs::action::FollowPath::Feedback> feedback) override {}
 
 private:
   std::vector<as2_msgs::msg::PoseWithID> path_;

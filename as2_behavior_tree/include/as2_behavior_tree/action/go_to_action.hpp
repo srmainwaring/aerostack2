@@ -56,7 +56,7 @@ public:
   void on_tick();
 
   void on_wait_for_result(
-      std::shared_ptr<const as2_msgs::action::GoToWaypoint::Feedback> feedback);
+      std::shared_ptr<const as2_msgs::action::GoToWaypoint::Feedback> feedback) override;
 
   static BT::PortsList providedPorts() {
     return providedBasicPorts(
