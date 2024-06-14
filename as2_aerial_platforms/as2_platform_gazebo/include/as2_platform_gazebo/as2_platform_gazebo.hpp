@@ -61,7 +61,7 @@ public:
   ~GazeboPlatform() {}
 
 public:
-  void configureSensors() {}
+  void configureSensors() override {}
   bool ownSendCommand() override;
   bool ownSetArmingState(bool state) override;
   bool ownSetOffboardControl(bool offboard) override;
